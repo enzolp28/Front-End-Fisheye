@@ -1,8 +1,16 @@
 @import url("photographer.css");
-
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 
@@ -15,7 +23,7 @@ header {
 }
 
 h1 {
-    color: #901C1C;
+    color: #901c45;
     margin-right: 100px;
 }
 
@@ -47,4 +55,27 @@ h1 {
 .photographer_section article img {
     height: 200px;
     width: 200px;
+}
+
+.img-name {
+    text-align: center;
+}
+
+.img-profile {
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.info {
+    text-align: center;
+
+}
+
+.info :nth-child(1) {
+    color: #901C1C;
+}
+
+.info :nth-last-child(1) {
+    color: #757575;
 }
