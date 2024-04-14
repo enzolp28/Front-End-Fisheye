@@ -14,9 +14,9 @@ function photographerTemplate(data) {
         const a = document.createElement('a');
 
         img.setAttribute("src", picture);
-        img.setAttribute("alt", name);
+        img.setAttribute("alt", `Photo ${name}`);
         a.setAttribute("href", `photographer.html?id=${id}`);
-        a.setAttribute("aria-label", 'Photo de profil cliquable');
+        a.setAttribute("aria-label", `lien vers le profil de ${name}`);
         a.classList.add('img-name')
         img.classList.add("img-profile")
         div.classList.add("info")

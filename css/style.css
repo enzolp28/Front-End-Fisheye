@@ -4,6 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+*:focus {
+    outline: 5px dashed #D3573C;
+}
+
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
