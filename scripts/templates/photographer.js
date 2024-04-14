@@ -12,10 +12,10 @@ function photographerTemplate(data) {
         const description = document.createElement('p');
         const prix = document.createElement('p');
         const a = document.createElement('a');
-        
+
         img.setAttribute("src", picture);
         img.setAttribute("alt", name);
-        a.setAttribute("href", '#');
+        a.setAttribute("href", `photographer.html?id=${id}`);
         a.setAttribute("aria-label", 'Photo de profil cliquable');
         a.classList.add('img-name')
         img.classList.add("img-profile")
@@ -24,7 +24,7 @@ function photographerTemplate(data) {
         h2.textContent = name;
         localisation.textContent = city + ', ' + country;
         description.textContent = tagline;
-        prix.textContent = price + "€/jour "
+        prix.textContent = price + "€/jour"
 
         article.appendChild(a);
         article.appendChild(div);
@@ -34,7 +34,24 @@ function photographerTemplate(data) {
         div.appendChild(localisation);
         div.appendChild(description);
         div.appendChild(prix)
+
         return (article);
     }
-    return { name, picture, getUserCardDOM }
+    
+    function profilPhotographer(){
+        const photographHeader = document.createElement('div')
+        const img = document.createElement('img');
+
+        img.setAttribute("src", picture);
+        img.setAttribute("alt", name);
+        console.log(img);
+        photographHeader.appendChild(img)
+
+
+        return (photographHeader)
+    }
+
+    return { name, picture, getUserCardDOM, id, profilPhotographer }
 }
+
+

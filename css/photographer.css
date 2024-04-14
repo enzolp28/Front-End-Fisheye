@@ -74,3 +74,16 @@ form input {
     border: none;
     border-radius: 5px;
 }
+
+.photograph-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.photograph-header img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
