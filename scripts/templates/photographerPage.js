@@ -61,7 +61,9 @@ function photographerPageTemplate() {
                     <h2>${title}</h2>
                     <div class="likes">
                         <span>${likes}</span>
-                        <img src="assets/icons/heart.svg" alt="likes">
+                        <button class="liker" aria-label="clickez pour liker">
+                            <img src="assets/icons/heart.svg" alt="likes">
+                        </button>
                     </div> 
                 </div>
             </div>

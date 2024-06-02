@@ -1,4 +1,4 @@
-
+let compteurLikes = 0;
 async function getPhotographer(photographerId) {
     try {
         // Ajout d'un message d'attente
@@ -41,6 +41,7 @@ async function init (){
     console.log(currentPhotographerId);
     const currentPhotographerData = await getPhotographer(currentPhotographerId)
     displayHeader(currentPhotographerData)
+    document.querySelector("#tjm").textContent = currentPhotographerData.price;
     const currentPhotographerMedia = await getPhotographerMedia(currentPhotographerId)
     console.log(currentPhotographerMedia);
     displayMedia(currentPhotographerMedia)
@@ -67,6 +68,8 @@ choixTrie.addEventListener('change', () => {
     displayMedia(currentPhotographerMedia)
 })
 
+
+
 function displayMedia(data){
     const mediaContainer = document.querySelector('.gallerie');
     mediaContainer.innerHTML = '';
@@ -74,7 +77,33 @@ function displayMedia(data){
     data.forEach(media => {
         mediaContainer.insertAdjacentHTML('beforeend', photographerPageTemplate().mediaCardDom(media, index))
         index++;
+        compteurLikes += media.likes
     });
+    document.querySelector("#total-likes").textContent = compteurLikes;
+    const btnLikes = document.querySelectorAll('.liker');
+    btnLikes.forEach(like => {
+        like.addEventListener('click', () => {
+            const parentElement = like.parentElement;
+            let mediaLikes = parentElement.querySelector('span').textContent;
+            console.log(parentElement);
+            const totalLikesElement = document.querySelector('#total-likes');
+            const spanMediaLikes = parentElement.querySelector('span');
+        if (!like.classList.contains('liked')) {
+            compteurLikes ++;
+            totalLikesElement.textContent = compteurLikes;
+            spanMediaLikes.textContent = Number(mediaLikes) +1;
+            like.classList.add('liked');
+        }else{
+            compteurLikes --;
+            totalLikesElement.textContent = compteurLikes;
+            spanMediaLikes.textContent = Number(mediaLikes) -1;
+            like.classList.remove('liked');
+        }
+
+        })
+    })
+   
+
     const mediaCards = document.querySelectorAll('.media');
     mediaCards.forEach(card => {
         card.addEventListener('click', () => {
@@ -82,6 +111,12 @@ function displayMedia(data){
             console.log(mediaId);
         })
     })
+}
+
+function displayFooterData(totalLikes, tjm){
+    
+    
+
 }
 
 function openLightBox(index){
