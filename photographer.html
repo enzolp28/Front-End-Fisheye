@@ -18,14 +18,23 @@
     <section class="photograph-header">
     </section>
     <section class="media-container">
-      <form action="trier">
-        <label for="trier">Trier par</label>
-        <select name="choix" id="choix">
-          <option value="popularite">Popularité</option>
-          <option value="date">Date</option>
-          <option value="titre">Tritre</option>
-        </select>
-      </form>
+
+      <div class="trier-container">
+        <div>
+          <p>Trier par </p>
+        </div>
+        <div class="dropdown">
+          <div class="select">
+            <span class="selected">Date</span>
+            <img class="arrow" src="./assets/icons/arrow.svg" width="25" alt="">
+          </div>
+          <ul class="menu" id="choix">
+            <li value="popularite">Popularité</li>
+            <li value="titre">Titre</li>
+            <li value="date">Date</li>
+          </ul>
+        </div>
+      </div>
       <div class="gallerie">
         <!-- <div class="media">
           <img src="assets/images/82/Art_Mine.jpg" alt="">
@@ -55,10 +64,9 @@
       <header>
         <h2>Contactez-moi <br> <span id="photographer-name"></span></h2>
         <button id="close-modal">
-          <img tabindex="1" src="assets/icons/close.svg"  />
+          <img tabindex="1" src="assets/icons/close.svg" />
         </button>
       </header>
-      
       <form>
         <div>
           <label for="prenom">Prénom</label>
@@ -76,8 +84,20 @@
         <button class="sub_button">Envoyer</button>
       </form>
     </div>
+
   </div>
-  
+
+  <div class="lightbox">
+    <img src="./assets/icons/close-lightbox.svg" alt="" />
+    <img src="./assets/icons/arrow-left.svg" alt="">
+    <img src="./assets/icons/arrow-right.svg" alt="">
+    <div class="lightbox-content">
+      <img src="./assets/images/82/Art_Mine.jpg" alt="" />
+      <p>Art Mine</p>
+    </div>
+  </div>
+
+
   <footer>
     <div>
       <span id="total-likes"></span>

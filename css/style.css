@@ -83,3 +83,9 @@ h1 {
 .info :nth-last-child(1) {
     color: #757575;
 }
+
+/* ///////// Lightbox ///////// */
+
+.lightbox {
+    display: none;
+}
