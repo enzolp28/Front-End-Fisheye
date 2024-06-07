@@ -1,10 +1,10 @@
 function mediaFactory() {
     function ImageMedia(src, alt) {
-        return `<img src=${src} alt=${alt} />`;
+        return `<img class="media-element" src=${src} alt=${alt} />`;
     }
 
     function VideoMedia(src) {
-        return `<video src=${src} controls>
+        return `<video class="media-element" src=${src} controls>
                     Votre navigateur ne supporte pas la lecture de vidéos intégrées.
             </video>`
     }
