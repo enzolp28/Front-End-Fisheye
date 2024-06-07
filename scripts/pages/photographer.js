@@ -157,6 +157,24 @@ function handleLightBox(index) {
     closeLightBox.addEventListener("click", () => {
         lightBox.style.display = "none";
     });
+    const btnPrev = document.querySelector(".btn-prev");
+    const btnNext = document.querySelector(".btn-next");
+    btnPrev.addEventListener("click", () => {
+        if (currentMediaIndex > 0) {
+            currentMediaIndex--;
+        }else {
+            currentMediaIndex = currentPhotographerMedia.length - 1;
+        }
+        openLightBox(currentMediaIndex);
+    });
+    btnNext.addEventListener("click", () => {
+        if (currentMediaIndex < currentPhotographerMedia.length - 1) {
+            currentMediaIndex++;
+        } else {
+            currentMediaIndex = 0;
+        }
+        openLightBox(currentMediaIndex);
+    });
     openLightBox(currentMediaIndex);
 }
 
