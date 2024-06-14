@@ -76,6 +76,14 @@ select.addEventListener('click', ()=>{
     arrow.classList.toggle('arrow-rotate')
     menu.classList.toggle('menu-open')
 });
+select.addEventListener('keydown', ()=>{
+    select.classList.toggle('select-clicked');
+    arrow.classList.toggle('arrow-rotate')
+    menu.classList.toggle('menu-open')
+    const firstLi = menu.querySelector('li[value="popularite"]');
+    firstLi.focus();
+
+});
 
 options.forEach( option => {
     option.addEventListener('click', () => {
@@ -84,6 +92,15 @@ options.forEach( option => {
         arrow.classList.remove('arrow-rotate')
         menu.classList.remove('menu-open')
         trieMedia(option.getAttribute('value'));
+    })
+    option.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            selected.innerText = option.innerText;
+            select.classList.remove('select-clicked');
+            arrow.classList.remove('arrow-rotate')
+            menu.classList.remove('menu-open')
+            trieMedia(option.getAttribute('value'));
+        }
     })
 })
 function trieMedia(choix) {
@@ -159,23 +176,41 @@ function handleLightBox(index) {
     });
     const btnPrev = document.querySelector(".btn-prev");
     const btnNext = document.querySelector(".btn-next");
-    btnPrev.addEventListener("click", () => {
+    function goToPrev(){
         if (currentMediaIndex > 0) {
             currentMediaIndex--;
         }else {
             currentMediaIndex = currentPhotographerMedia.length - 1;
         }
         openLightBox(currentMediaIndex);
-    });
-    btnNext.addEventListener("click", () => {
+    }
+    function goToNext(){
         if (currentMediaIndex < currentPhotographerMedia.length - 1) {
             currentMediaIndex++;
         } else {
             currentMediaIndex = 0;
         }
         openLightBox(currentMediaIndex);
-    });
-    openLightBox(currentMediaIndex);
+    }
+    btnPrev.addEventListener("click", goToPrev);
+    btnNext.addEventListener("click", goToNext);
+    openLightBox(currentMediaIndex)
+    lightBox.focus()
+    closeLightBox.focus()
+    // naviguer avec touche clavier
+    lightBox.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+            goToPrev();
+        }
+        if (e.key === "ArrowRight") {
+            goToNext();
+        }
+        if (e.key === "Escape") {
+            lightBox.style.display = "none";
+        }
+
+    })
+    
 }
 
 function openLightBox(index) {

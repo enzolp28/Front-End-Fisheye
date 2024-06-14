@@ -186,6 +186,7 @@ main {
     display: flex;
     align-items: center;
     color: black;
+    padding-right: 7px;
 }
 
 footer {
@@ -206,14 +207,16 @@ footer {
     background: transparent;
     cursor: pointer;
     margin-left: 10px;
+    transform: scale(1);
+    transition: transform 0.4s;
 }
 
 .liker:hover {
-    box-shadow: #312E2E 0 0 10px;
+    transform: scale(1.2);
 }
 
 .liked {
-    transform: scale(1.2);
+    transform: scale(1.4);
 }
 
 /* DROP DOWN */
@@ -242,6 +245,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background 0.3s;
 }
 
 .select-clicked {
@@ -284,11 +288,14 @@ footer {
 .menu li {
     padding-top: 5px;
     cursor: pointer;
-    padding-bottom: 10PX;
+    padding-bottom: 10px;
+    transition: padding 0.3s;
 }
 
 .menu li:hover {
     background: #a42626;
+    border-radius: 10px;
+    padding-left: 10px;
 }
 
 .menu-open {
@@ -355,6 +362,14 @@ footer {
 .lightbox-modal .btn:hover {
     background-color: rgba(0, 0, 0, 0.3);
 
+}
+
+.media-element {
+    cursor: pointer;
+}
+
+.media-element:focus {
+    transform: scale(0.95);
 }
 
 

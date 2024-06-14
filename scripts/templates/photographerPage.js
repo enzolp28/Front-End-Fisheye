@@ -1,10 +1,10 @@
 function mediaFactory() {
     function ImageMedia(src, alt) {
-        return `<img class="media-element" src=${src} alt=${alt} />`;
+        return `<img aria-label="Cliquez pour ouvrir la lightbox" tabindex="0" class="media-element" src=${src} alt=${alt} />`;
     }
 
     function VideoMedia(src) {
-        return `<video class="media-element" src=${src} controls>
+        return `<video aria-label="Cliquez pour ouvrir la lightbox" class="media-element" tabindex="0" src=${src} controls>
                     Votre navigateur ne supporte pas la lecture de vidéos intégrées.
             </video>`
     }
@@ -31,7 +31,7 @@ function photographerPageTemplate() {
             <p>${city}, ${country}</p>
             <p>${tagline}</p>
         </div>
-        <button class="contact_button"">Contactez-moi</button>
+        <button class="contact_button" aria-label="Cliquez pour contacter ${name}">Contactez-moi</button>
         <img src="./assets/images/photographers/${portrait}" alt="portrait de ${name}">
         `
     }

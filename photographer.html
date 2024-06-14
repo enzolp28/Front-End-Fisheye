@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
   <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -12,7 +12,9 @@
 
 <body>
   <header>
-    <img src="assets/images/logo.png" class="logo" />
+    <a href="./index.html" aria-label=" cliquez pour retourner à la page d'accueil">
+      <img src="assets/images/logo.png" class="logo" alt="fisheye logo"/>
+    </a>
   </header>
   <main id="main">
     <section class="photograph-header">
@@ -23,15 +25,15 @@
         <div>
           <p>Trier par </p>
         </div>
-        <div class="dropdown">
-          <div class="select">
+        <div class="dropdown" >
+          <div class="select" tabindex="0">
             <span class="selected">Date</span>
             <img class="arrow" src="./assets/icons/arrow.svg" width="25" alt="">
           </div>
           <ul class="menu" id="choix">
-            <li value="popularite">Popularité</li>
-            <li value="titre">Titre</li>
-            <li value="date">Date</li>
+            <li value="popularite" tabindex="0">Popularité</li>
+            <li value="titre" tabindex="0">Titre</li>
+            <li value="date" tabindex="0">Date</li>
           </ul>
         </div>
       </div>
@@ -63,8 +65,8 @@
     <div class="modal">
       <header>
         <h2>Contactez-moi <br> <span id="photographer-name"></span></h2>
-        <button id="close-modal">
-          <img tabindex="1" src="assets/icons/close.svg" />
+        <button id="close-modal" aria-label="Fermer modal">
+          <img tabindex="1" src="assets/icons/close.svg" alt=" croix pour Fermer"  />
         </button>
       </header>
       <form>
@@ -88,9 +90,9 @@
   </div>
 
   <div class="lightbox-modal">
-    <img class="btn btn-close-lightbox" src="./assets/icons/close-lightbox.svg" alt="" />
-    <img class="btn btn-prev" src="./assets/icons/arrow-left.svg" alt="">
-    <img class="btn btn-next" src="./assets/icons/arrow-right.svg" alt="">
+    <img class="btn btn-close-lightbox" src="./assets/icons/close-lightbox.svg" tabindex="0" alt="fermer la lightbox" role="button" aria-label="fermer la lightbox" />
+    <img class="btn btn-prev" src="./assets/icons/arrow-left.svg" tabindex="0" alt=" passer à la photo précédente" role="button" aria-label="passer à la photo précédente">
+    <img class="btn btn-next" src="./assets/icons/arrow-right.svg" tabindex="0" alt="passer à la photo suivante" role="button" aria-label="passer à la photo suivante">
     <div class="lightbox-content">
       <img id="" src="./assets/images/82/Art_Mine.jpg" alt="" />
       <p>Art Mine</p>
