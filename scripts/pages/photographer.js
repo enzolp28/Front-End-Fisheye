@@ -198,7 +198,7 @@ function handleLightBox(index) {
     lightBox.focus()
     closeLightBox.focus()
     // naviguer avec touche clavier
-    lightBox.addEventListener("keydown", (e) => {
+    document.addEventListener("keydown", (e) => {
         if (e.key === "ArrowLeft") {
             goToPrev();
         }

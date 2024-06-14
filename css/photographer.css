@@ -11,7 +11,6 @@
 
 .photograph-header {
     background-color: #FAFAFA;
-    height: 300px;
 }
 
 
@@ -117,6 +116,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+@media screen and (max-width: 1089px) {
+    .photograph-header {
+        justify-content: center;
+    }
 }
 
 .photograph-header img {
