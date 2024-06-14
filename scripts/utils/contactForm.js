@@ -4,6 +4,17 @@ function handleContactForm() {
   const btnCloseModal = document.getElementById("close-modal");
   const btnOpenModal = document.querySelector(".contact_button");
   const modal = document.getElementById("contact_modal");
+  const contactForm = document.getElementById("contact-form");
+
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData.entries());
+    console.log(data);
+    alert("Message envoyé");
+    contactForm.reset();
+    closeModal();
+  });
   
   btnOpenModal.addEventListener("click", displayModal);
   btnCloseModal.addEventListener("click", closeModal);

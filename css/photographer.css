@@ -372,5 +372,9 @@ footer {
     transform: scale(0.95);
 }
 
+input, textarea {
+    font-size: 36px;
+}
+
 
 
