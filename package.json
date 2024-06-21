@@ -1,0 +1,15 @@
+{
+  "name": "front-end-fisheye",
+  "version": "1.0.0",
+  "scripts": {
+    "linter": "npx eslint ./scripts/"
+
+  },
+  "author": "Enzo",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.5.0",
+    "eslint": "^9.5.0",
+    "globals": "^15.6.0"
+  }
+}

@@ -164,9 +164,6 @@ function displayMedia(data) {
 
 
 
-
-function displayFooterData(totalLikes, tjm) { }
-
 function handleLightBox(index) { 
     const lightBox = document.querySelector(".lightbox-modal");
     let currentMediaIndex = index;

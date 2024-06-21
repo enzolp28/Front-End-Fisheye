@@ -2,6 +2,8 @@ function photographerTemplate(data) {
     const { tagline, country, city, name, portrait, price, id } = data;
 
     const picture = `assets/images/photographers/${portrait}`;
+    
+    // Gere l'affichage des photographes sur index.html
     function getUserCardDOM() {
 
         const article = document.createElement('article');

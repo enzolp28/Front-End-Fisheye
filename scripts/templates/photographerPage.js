@@ -1,3 +1,4 @@
+// Permet d'afficher les images ou les vidéos
 function mediaFactory() {
     function ImageMedia(src, alt) {
         return `<img aria-label="Cliquez pour ouvrir la lightbox" tabindex="0" class="media-element" src=${src} alt=${alt} />`;
@@ -5,8 +6,8 @@ function mediaFactory() {
 
     function VideoMedia(src) {
         return `<video aria-label="Cliquez pour ouvrir la lightbox" class="media-element" tabindex="0" src=${src} controls>
-                    Votre navigateur ne supporte pas la lecture de vidéos intégrées.
-            </video>`
+                Votre navigateur ne supporte pas la lecture de vidéos intégrées.
+        </video>`
     }
 
     function createMedia(type, src, alt) {
@@ -22,9 +23,10 @@ function mediaFactory() {
     return { createMedia };
 }
 
+// Gere l'affichage du header de la page photographer.html
 function photographerPageTemplate() {
     function headerDom(photographerData) {
-        const { tagline, country, city, name, portrait, price } = photographerData
+        const { tagline, country, city, name, portrait } = photographerData
         return `
         <div class="photographer-info">
             <h1>${name}</h1>
@@ -37,8 +39,7 @@ function photographerPageTemplate() {
     }
 
 
-
-
+    // Gere l'affichage des medias de la page photographer.html
     function mediaCardDom(photographerData, index) {
         const { title, likes, photographerId, image, video } = photographerData
         const mediaFactoryInstance = new mediaFactory(); // Initialisation de mediaFactory ici
