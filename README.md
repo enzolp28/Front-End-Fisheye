@@ -4,3 +4,8 @@
 
 Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
 
+Pour utiliser eslint faire : 
+```shell
+npm install
+npm run linter
+```

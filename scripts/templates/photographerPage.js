@@ -23,13 +23,13 @@ function mediaFactory() {
     return { createMedia };
 }
 
-// Gere l'affichage du header de la page photographer.html
+// Gere l'affichage du header profil de la page photographer.html
 function photographerPageTemplate() {
     function headerDom(photographerData) {
         const { tagline, country, city, name, portrait } = photographerData
         return `
         <div class="photographer-info">
-            <h1>${name}</h1>
+            <h1>${name}</h1
             <p>${city}, ${country}</p>
             <p>${tagline}</p>
         </div>
@@ -42,7 +42,7 @@ function photographerPageTemplate() {
     // Gere l'affichage des medias de la page photographer.html
     function mediaCardDom(photographerData, index) {
         const { title, likes, photographerId, image, video } = photographerData
-        const mediaFactoryInstance = new mediaFactory(); // Initialisation de mediaFactory ici
+        const mediaFactoryInstance =  mediaFactory(); // Initialisation de mediaFactory ici
         let media;
         try {
             if (video) {

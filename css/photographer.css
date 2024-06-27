@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(252, 249, 249, 0.902);
-    z-index: 1;
+    z-index: 10;
 }
 
 .photograph-header {
@@ -43,24 +43,25 @@
 
 }
 
-.modal header {
+.modal .modal-header {
+    display: flex;
     justify-content: space-between;
     width: 100%;
     height: auto;
     align-items: baseline;
 }
 
-.modal header img {
+.modal-header img {
     cursor: pointer;
     background-color: none;
 }
 
-.modal header h2 {
+.modal-header h2 {
     font-size: 64px;
     font-weight: normal;
 }
 
-.modal header button {
+.modal-header button {
     background: none;
     border: none;
     width: 72px;
@@ -207,6 +208,7 @@ footer {
     justify-content: space-between;
     font-size: 24px;
     border-radius: 5px 5px 0 0;
+    z-index: 9;
 }
 
 .liker {
@@ -255,10 +257,10 @@ footer {
     transition: background 0.3s;
 }
 
-.select-clicked {
-    border: 2px #26489a solid;
+/* .select-clicked {
+    border: 0px #26489a solid;
 
-}
+} */
 
 .select:hover {
     background: #a42626;
