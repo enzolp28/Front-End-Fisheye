@@ -200,7 +200,7 @@ function displayMedia(data) {
             handleLightBox(mediaId);
         });
 
-        // lorsqu'on appuie sur entree, on ouvre la lightbox
+        // lorsqu'on appuie sur entrer, on ouvre la lightbox
         media.addEventListener("keydown", (event) => {
             if (event.key === "Enter") {
                 const mediaId = media.parentElement.dataset.index;
@@ -219,9 +219,16 @@ function handleLightBox(index) {
     let currentMediaIndex = index;
     console.log('currentmediaindex:',currentMediaIndex);
 
-    closeLightBox.addEventListener("click", () => {
+    closeLightBox.addEventListener("click", closeModal);
+    closeLightBox.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            closeModal();
+        }
+    })
+
+    function closeModal() {
         lightBox.style.display = "none";
-    });
+    }
 
     const btnPrev = document.querySelector(".btn-prev");
     const btnNext = document.querySelector(".btn-next");
@@ -248,11 +255,23 @@ function handleLightBox(index) {
     btnPrev.addEventListener("click", goToPrev);
     btnNext.addEventListener("click", goToNext);
 
+    btnPrev.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            goToPrev();
+        }
+    })
+
+    btnNext.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            goToNext();
+        }
+    })
+
     openLightBox(currentMediaIndex)
     lightBox.focus()
     closeLightBox.focus()
 
-    // naviguer avec touche clavier
+    // naviguer avec touche clavier 
     document.addEventListener("keydown", (e) => {
         if (e.key === "ArrowLeft") {
             goToPrev();
@@ -261,9 +280,11 @@ function handleLightBox(index) {
             goToNext();
         }
         if (e.key === "Escape") {
-            lightBox.style.display = "none";
+            closeModal();
         }
     })
+
+    
 }
 
 function openLightBox(index) {
