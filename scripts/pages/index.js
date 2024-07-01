@@ -22,14 +22,12 @@ async function displayData(photographers) {
     photographers.forEach((photographer) => {
         // Creation des donnees photographe
         const photographerModel = photographerTemplate(photographer);
-        console.log(photographerModel.id);
-        //recupere l'id du photographe
-        const idPhotographer = photographerModel.id
-        // creation de l'affichage via headerDom()
+
+        // creation de l'affichage via getUserCardDOM()
         const userCardDOM = photographerModel.getUserCardDOM();
+
         //Ajout de l'affichage au parent photographer_section
         photographersSection.appendChild(userCardDOM);
-        console.log(idPhotographer);
 
     });
 

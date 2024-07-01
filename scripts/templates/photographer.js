@@ -5,7 +5,6 @@ function photographerTemplate(data) {
     
     // Gere l'affichage des photographes sur index.html
     function getUserCardDOM() {
-
         const article = document.createElement('article');
         const img = document.createElement('img');
         const div = document.createElement('div')
@@ -40,20 +39,19 @@ function photographerTemplate(data) {
         return (article);
     }
     
-    function profilPhotographer(){
-        const photographHeader = document.createElement('div')
-        const img = document.createElement('img');
+    // function profilPhotographer(){
+    //     const photographHeader = document.createElement('div')
+    //     const img = document.createElement('img');
 
-        img.setAttribute("src", picture);
-        img.setAttribute("alt", name);
-        console.log(img);
-        photographHeader.appendChild(img)
+    //     img.setAttribute("src", picture);
+    //     img.setAttribute("alt", name);
+    //     console.log(img);
+        
+    //     photographHeader.appendChild(img)
+    //     return (photographHeader)
+    // }
 
-
-        return (photographHeader)
-    }
-
-    return { name, picture, getUserCardDOM, id, profilPhotographer }
+    return { name, picture, getUserCardDOM, id }
 }
 
 

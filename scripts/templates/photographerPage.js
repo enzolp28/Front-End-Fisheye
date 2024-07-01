@@ -25,6 +25,7 @@ function mediaFactory() {
 
 // Gere l'affichage du header profil de la page photographer.html
 function photographerPageTemplate() {
+    
     function headerDom(photographerData) {
         const { tagline, country, city, name, portrait } = photographerData
         return `
